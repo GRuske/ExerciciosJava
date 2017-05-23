@@ -14,6 +14,10 @@ public interface Stack<E> {
 	int getSize();
 	
 	boolean isEmpty();	
-	
-	List<E> pop(int i);
+
+	List<E> pop(int n);
+	//4
+	E[] clear();
+	//5
+	Stack<E> cloneStack();
 }

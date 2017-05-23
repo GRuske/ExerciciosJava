@@ -1,7 +1,9 @@
 package estd;
 
-public class Q1Test {
+import org.junit.*;
 
+public class Q1Test {
+	@Test
 	public void testQ1() {
 		Q1 testq1 = new Q1();
 		
@@ -9,6 +11,7 @@ public class Q1Test {
 		
 		Stack<Integer> stack = testq1.toStack(array);
 		
+		Assert.assertTrue(stack.getSize() == 3);
 		
 	}
 	

@@ -1,5 +1,6 @@
 package estd;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayStack<E> implements Stack<E> {
@@ -35,7 +36,7 @@ public class ArrayStack<E> implements Stack<E> {
 		if (isEmpty()) {
 			return null;
 		} else {
-			E aux = array[position-1];
+			E aux = array[position - 1];
 			array[position - 1] = null;
 			position--;
 			return aux;
@@ -61,8 +62,48 @@ public class ArrayStack<E> implements Stack<E> {
 		return position == 0;
 	}
 
-	public List<E> pop(int n){
-		//List<E> list = new Ar
-		return null;
+	// 2
+	@Override
+	public List<E> pop(int n) {
+		List<E> list = new ArrayList<>();
+		if (n > position) {
+			n = position;
+		}
+
+		for (int i = 0; i < n; i++) {
+			if (!isEmpty()) {
+				list.add(pop());
+			}
+		}
+
+		return list;
+	}
+
+	// 4
+	@Override
+	public E[] clear() {
+
+		E[] array = (E[]) new Object[getSize()];
+		int x = 0;
+		while (!isEmpty()) {
+			array[x++] = pop();
+		}
+
+		return array;
+	}
+
+	// 5
+	@Override
+	public Stack<E> cloneStack() {
+		Stack<E> stack = new ArrayStack<>(getSize());
+
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] != null) {
+				stack.push(array[i]);
+			}
+
+		}
+
+		return stack;
 	}
 }

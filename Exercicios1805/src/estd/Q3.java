@@ -5,6 +5,7 @@ public class Q3 {
 
 		int[] array = new int[stack.getSize()];
 		int x = 0;
+
 		while (!stack.isEmpty()) {
 			int aux = stack.pop();
 			if (aux % 2 == 0) {
