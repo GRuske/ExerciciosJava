@@ -14,7 +14,7 @@ public interface Stack<E> {
 	int getSize();
 	
 	boolean isEmpty();	
-
+	//3
 	List<E> pop(int n);
 	//4
 	E[] clear();
